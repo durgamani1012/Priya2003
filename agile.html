@@ -1,0 +1,286 @@
+<!-- <html>
+<body>
+<form>
+	<input type="text" id="text1" maxlength="10">NAME<br><br><br>
+	<input type="text" id="pwd1" maxlength="10">PASSWORD<br><br>
+	<input type="radio" id="i1" name="gender" value="male">male
+	<input type="radio" id="i2" name="gender" value="female">female
+	<input type="radio" id="i3" name="gender" value="others">others
+	<input type="submit" id="button" value="click" onclick="funct()">
+	<script>
+		function funct()
+		{
+			var uid=document.getElementById("text1").value;
+			var pwd=document.getElementById("pwd1").value;
+			var gen=document.getElementsByName("gender");
+			var gen1;
+			for(var i=0;i<gen.length;i++)
+			{
+				if(gen[i].checked)
+				{
+					gen1=gen[i].value;
+				}
+			}
+			if(uid==pwd)
+			{
+				document.write("welcome"+" "+uid);
+				document.write("<br>gender"+" "+gen1);
+			}
+		}
+	</script>
+</form>
+</body>
+</html> -->
+
+
+
+<!-- 
+<html>
+<body>
+<form>
+	<input type="text" id="text1" maxlength="10">NAME<br><br><br>
+	<input type="text" id="pwd1" maxlength="10">PASSWORD<br><br>
+	<input type="checkbox" id="i1" name="gender" value="male">male
+	<input type="checkbox" id="i2" name="gender" value="female">female
+	<input type="checkbox" id="i3" name="gender" value="others">others
+	<input type="submit" id="button" value="click" onclick="funct()">
+	<script>
+		function funct()
+		{
+			var uid=document.getElementById("text1").value;
+			var pwd=document.getElementById("pwd1").value;
+			var gen=document.getElementsByName("gender");
+			var gen1=[];
+			for(var i=0;i<gen.length;i++)
+			{
+				if(gen[i].checked)
+				{
+					gen1[i]=gen[i].value;
+				}
+			}
+			if(uid==pwd)
+			{
+				document.write("welcome"+" "+uid);
+				for(var i=0;i<gen1.length;i++)
+				{
+					document.write("<br>gender"+" "+gen1[i]);
+				}
+			}
+		}
+	</script>
+</form>
+</body>
+</html> -->
+
+
+
+
+
+
+
+<!-- <body>
+<select id="education" onchange="funct()">
+	<option value=""></option>
+	<option value="UG">UG</option>
+	<option value="PG">PG</option>
+	<option value="Ph.D">Ph.D</option>
+</select>
+<select id="undergrad" disabled>
+	<option value=""></option>
+	<option value="arts">ARTS</option>
+	<option value="engg">ENGG</option>
+	<option value="medical">MEDICAL</option>
+</select>
+<select id="postgrad" disabled>
+	<option value=""></option>
+	<option value="arts">ARTS</option>
+	<option value="engg">ENGG</option>
+	<option value="medical">MEDICAL</option>
+</select>
+<select id="phd" disabled>
+	<option value=""></option>
+	<option value="arts">ARTS</option>
+	<option value="engg">ENGG</option>
+	<option value="medical">MEDICAL</option>
+</select>
+<form>
+	<input type="checkbox" id="i1" name="course" value="c">
+	<input type="button" id="button" value="click" onclick="funct()">
+</form>
+<script>
+function funct()
+{
+	var e=document.getElementById("education").value;
+	if(e=="UG")
+	{	
+		document.getElementById("undergrad").disabled=false;
+		document.getElementById("postgrad").disabled=true;
+		document.getElementById("phd").disabled=true;
+	}
+	else if(e=="PG")
+	{
+		document.getElementById("undergrad").disabled=true;
+		document.getElementById("phd").disabled=true;
+		document.getElementById("postgrad").disabled=false;
+	}
+	else if(e=="Ph.D")
+	{
+		document.getElementById("undergrad").disabled=true;
+		document.getElementById("postgrad").disabled=true;
+		document.getElementById("phd").disabled=false;
+	}
+}
+</script>
+</body>
+</html> 
+ -->
+<!-- <html>
+<body>
+<form>
+	FIRST NAME:<input type="text" id="text1"><br><br><br>
+	LAST NAME:<input type="text" id="text2"><br><br>
+	EMAIL ID:<input type="email" id="text3"><br><br>
+	PASSWORD:<input type="password" id="pwd"><br><br>
+	<input type="radio" id="i1" name="gender" value="female">female
+	<input type="radio" id="i2" name="gender" value="male">male<br><br>
+	DOOR NUMBER & STREET:<input type="text" id="text6" onchange="area()" ><br><br>
+	AREA NAME:<input type="text" id="text4" onchange="pin()" disabled><br><br>
+	PIN CODE:<input type="text" id="text5" disabled><br><br>
+	<input type="checkbox" id="i4" name="ag" value="ab" onchange="permanent()">Same as permanent address<br><br>
+	DOOR NUMBER & STREET:<input type="text" id="text7" onchange="area1()" ><br><br>
+	AREA NAME:<input type="text" id="text8" onchange="pin1()"><br><br>
+	PIN CODE:<input type="text" id="text9"><br><br>
+	<input type="checkbox" id="i3" name="agee1" value="ab" onchange="agree()" >I agree upon terms and conditions
+	<input type="button" id="but" value="click" onclick="funct()" disabled>
+	<script>
+		function area()
+		{	
+			document.getElementById("text4").disabled=false;
+			document.getElementById("text5").disabled=true;
+		}
+		function pin()
+		{
+			document.getElementById("text5").disabled=false; 
+		}
+		function agree()
+		{
+			var b=document.getElementsByName("agee1");
+			if(b[0].checked)
+			{
+				document.getElementById("but").disabled=false;
+			}
+			else
+			{
+				document.getElementById("but").disabled=true;
+			}
+		}
+		function permanent()
+		{
+			var a=document.getElementsByName("ag");
+			var streetname=document.getElementById("text6").value;
+			var Areaname=document.getElementById("text4").value;
+			var pincode=document.getElementById("text5").value;
+			if(a[0].checked)
+			{
+			    document.getElementById("text7").disabled=true;
+				document.getElementById("text8").disabled=true;
+				document.getElementById("text9").disabled=true;
+				document.getElementById("text7").value=streetname;
+				document.getElementById("text8").value=Areaname;
+				document.getElementById("text9").value=pincode;
+			}
+			else
+			{	
+				document.getElementById("text7").disabled=false;
+				document.getElementById("text8").disabled=true;
+				document.getElementById("text9").disabled=true;
+			}
+		}
+			function area1()
+			{	
+				document.getElementById("text8").disabled=false;
+				document.getElementById("text9").disabled=true;
+			}
+			function pin1()
+			{
+				document.getElementById("text9").disabled=false; 
+			}
+	</script>
+</form>
+</body>
+</html>
+
+
+
+
+ -->
+
+
+<html>
+<body>
+<input type="checkbox" id="c1" name="age" value="major" onchange="fi()">major<br>
+<input type="button" id="b1" value="submit" disabled>
+<select id="crs" onchange="f()">
+<option value=""></option>
+<option value="UG">UG</option>
+<option value="PG">PG</option>
+<option value="Phd">Phd</option>
+</select>
+<select id="under" disabled>
+<option value=""></option>
+<option id="arts">arts</option>
+<option id="engineering">engineering</option>
+</select>
+<select id="post" disabled>
+<option value=""></option>
+<option id="arts">arts</option>
+<option id="engineering">engineering</option>
+</select>
+<select id="doct" disabled>
+<option value=""></option>
+<option id="arts">arts</option>
+<option id="engineering">engineering</option>
+<script>
+function fi()
+{
+var a=document.getElementsByName("age");
+for(var i=0;i<a.length;i++)
+{
+if(a[i].checked)
+{
+document.getElementById("b1").disabled=false;
+}
+else
+{
+document.getElementById("b1").disabled=true;
+}
+}
+}
+function f()
+{
+var e=document.getElementById("crs").value;
+if(e=="UG")
+{
+document.getElementById("under").disabled=false;
+document.getElementById("post").disabled=true;
+document.getElementById("doct").disabled=true;
+}
+else if(e=="PG")
+{
+document.getElementById("under").disabled=true;
+document.getElementById("post").disabled=false;
+document.getElementById("doct").disabled=true;
+}
+else if(e=="Phd")
+{
+document.getElementById("under").disabled=true;
+document.getElementById("post").disabled=true;
+document.getElementById("doct").disabled=false;
+}
+}
+</script>
+</body>
+</html>
+
+
+
